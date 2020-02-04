@@ -1,0 +1,15 @@
+<ol >
+  {{#each dataFromDB}}
+      <li>
+        {{this.dataValues.linkURL}}
+        <button data-id="{{this.dataValues.id}}" class="deleteButton">Delete</button>
+      </li>
+  {{/each}}
+</ol>
+  
+<form class="create-form text-center">
+  <div class="form-group">
+    <input type="text" id="newLink" name="dataName">
+  </div>
+  <button id="submitButton" type="submit">Submit</button>
+</form>
