@@ -1,17 +1,34 @@
 var path = require("path");
 var db = require("../models");
 
-module.exports = function(app) 
-{
-  app.get("/", function(req, res) 
-  {
-    db.link_tb.findAll({}).then (function (response)
-    {
-    //console.log (response);
-    return res.render("index", { dataFromDB: response });
-    });
+module.exports = function(app) {
+  //Routes handling the HTML page that the user gets sent to
+
+  //TODO: CONFIRM NAME OF PATHS, js files are not yet created.
+  //TODO: named HTML files: selectCat, link, manage, search
+  
+  //Index route: 
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/selectCat.html"));
+    // db.link_tb.findAll({}).then (function (response) {
+    // return res.render("index", { dataFromDB: response });
+    // });
   });
 
+  //Enter link route:
+  app.get("/link", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/link.html"));
+  });
+
+  //Manage category route:
+  app.get("/manage", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/manage.html"));
+  });
+
+  //Stretch goal: Search Youtube route:
+  app.get("/search", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/search.html"));
+  });
 }
 
 //SAMPLE RETURN
