@@ -25,4 +25,14 @@ module.exports = function(app)
     });
   });
 
+
+  //DELETE THIS AFTER TESTING
+    app.get("/category", function(req, res) 
+    {
+      db.category_tb.findAll({})
+      .then(function(results) 
+      {
+        res.json(results);
+      });
+    });
 };
