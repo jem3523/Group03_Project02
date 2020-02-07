@@ -19,7 +19,7 @@
 
 function getCategories(linkID)
 {
-    $.get("/category", function(data) 
+    $.get("/", function(data) 
     {
         var dropDownList = ""; 
         $.each(data,function(key,val) 
@@ -55,15 +55,3 @@ function getCategories(linkID)
 };
 
 
-
-
-{/* <button id="goToSearch" type="submit">YouTube Search</button>
-<script>
-  $('#goToSearch').on('click', function (){
-    window.location.href = "/search";
-  }); */}
-
-
-//   app.get("/search", function(req, res) {
-//     return res.render("search");
-//   });
