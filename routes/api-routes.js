@@ -1,38 +1,53 @@
+//Routes for displaying and saving data to the DB
+
 var db = require("../models");
 
-module.exports = function(app) 
-{
-  //add a new entry to the table
-  app.post("/", function(req, res) 
-  {
-    db.link_tb.create(req.body)
-    .then(function(result) 
-    {
-      res.json(result);
+module.exports = function(app) {
+  
+  //GET: category route, for getting all categories
+  app.get("/api/posts", function(req, res) {
+    var query = {};
+    if (req.query.category_id) {
+      query.CategoryId = req.query.category_id;
+    }
+    //Include property for model we want to include (db.category)
+    db.link_tb.findAll({
+      where: query,
+      include: [db.category_tb]
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+  
+  //POST: category route, for saving a new entry
+  app.post("/api/posts", function(req, res) {
+    db.link_tb.create(req.body).then(function(dbPost) {
+      res.json(dbPost);
     });
   });
 
-  //delete an entry from the table
-  app.delete("/:id", function(req, res) 
-  {
-    db.link_tb.destroy(
-    {
-    where: {id: req.params.id}
-    })
-    .then(function(result) 
-    {
-    res.json(result);
+  //DELETE: link, an entry from the table
+  app.delete("/api/posts/:id", function(req, res) {
+    db.link_tb.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbPost) {
+      res.json(dbPost);
     });
   });
 
-
-  //DELETE THIS AFTER TESTING
-    app.get("/category", function(req, res) 
-    {
-      db.category_tb.findAll({})
-      .then(function(results) 
+  //PUT: route for updating posts
+  //! Available for later if we need it.
+  app.put("api/posts", function (req, res) {
+    db.link_tb.update(
+      req.body,
       {
-        res.json(results);
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbPost) {
+        res.json(dbPost);
       });
-    });
+  });
 };
