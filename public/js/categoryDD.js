@@ -1,5 +1,3 @@
-//assumes a getALL route called "/category"
-
 //REPLACE MAIN HANDLEBAR HEADER INFO WITH:
 //<meta charset="UTF-8">
 //<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
@@ -9,18 +7,17 @@
 //<link rel="stylesheet" href="/css/style.css" type="text/css" /> 
 //<title>TITLE</title>
 //<script src="/js/client.js"></script>
-
-//PUT THE FOLLOWING IN MAIN HANDLEBAR BODY:
 //<script src="/js/categoryDD.js"></script>
-//<script>getCategories(0)</script>
 
 //PUT THE FOLLOWING IN INDEX HANDLEBAR HTML:  
-//<div class='catButton text-center'></div>
+//<div id='div_999' data-catID = '' class='catButton text-center'></div>
+//<script>getCategories(999)</script>
 
 function getCategories(linkID)
 {
-    $.get("/", function(data) 
+    $.get("/api/category", function(data)
     {
+        //console.log(data)
         var dropDownList = ""; 
         $.each(data,function(key,val) 
         {
@@ -38,9 +35,10 @@ function getCategories(linkID)
         //INSERT HTML
         $("#div_" + linkID).append(dropDownCode);
 
-        //LISTENERS
+        // //LISTENER FOR THE ACTUAL BUTTON
         $('#dropdownMenuButton').on('show.bs.dropdown');
  
+        //LISTENER FOR THE DROP-DOWN LIST WITHIN THE BUTTON
 		$('.dropdown-item_' + linkID).on('click', function ()
 		{
             var linkID = $(this).attr("data-linkID")
@@ -48,7 +46,15 @@ function getCategories(linkID)
 
             console.log("for linkID " + linkID + ", the selected catID is " + catID);
 
-            selectedLinks[linkID].catID =catID;
+            if (linkID === 999)
+            {
+                $("#div_" + linkID).attr('data-catID', catID); 
+            }
+            else
+            {
+                $("#linkID_" + linkID).attr('data-catID', catID);  
+            };
+            
             return;
 		});
     });
