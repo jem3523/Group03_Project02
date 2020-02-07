@@ -6,29 +6,26 @@ module.exports = function(app) {
 
   //TODO: CONFIRM NAME OF PATHS, js files are not yet created.
   //TODO: named HTML files: selectCat, link, manage, search
+
+  app.get("/search", function(req, res) {
+    return res.render("search");
+  });
   
-  //Index route: 
+  //category (home) route: 
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/selectCat.html"));
-    // db.link_tb.findAll({}).then (function (response) {
-    // return res.render("index", { dataFromDB: response });
-    // });
+    return res.render("index");
   });
 
   //Enter link route:
   app.get("/link", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/link.html"));
+    return res.render("link");
   });
 
   //Manage category route:
   app.get("/manage", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/manage.html"));
+    return res.render("manage");
   });
 
-  //Stretch goal: Search Youtube route:
-  app.get("/search", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/search.html"));
-  });
 }
 
 //SAMPLE RETURN

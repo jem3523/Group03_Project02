@@ -22,7 +22,10 @@
     $("#searchResultList").empty();
 
     var searchInput = $("#searchInput").val().trim();
-    var apiKey = "AIzaSyB8xIzGzOaMROHKCkK7Xsw36JSRd85ugZE"
+
+    {{!-- 
+    function getYouTubeLinks(searchInput)
+    var apiKey = process.env.APIKEY;
     var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=" + searchInput + "&key=" + apiKey;
     console.log(queryURL);
 
@@ -32,19 +35,23 @@
     }).then(function(response) 
     {
       console.log(response.items);
-      var results = response.items;
+      res.response.items 
+      --}}
 
-      for (var i = 0; i < results.length; i++) 
+    $.get("/getYouTube/" + searchInput)
+    .then (function(results)
       {
-        var label = results[i].snippet.title;
-        var vURL= "https://youtu.be/" + results[i].id.videoId;
-        var resultLink = "<a href='" + vURL + "' target='_blank'>" + label + "</a>";
-        var buttonLink = "<button data-url='" + vURL + "' data-label='" + label + "' class='addButton btn btn-primary'>Add</button>"
-        
-        $("#searchResultList").append("<div>" + buttonLink + "  " + resultLink + "</div><br>");
-      };
-
+        for (var i = 0; i < results.length; i++) 
+        {
+          var label = results[i].snippet.title;
+          var vURL= "https://youtu.be/" + results[i].id.videoId;
+          var resultLink = "<a href='" + vURL + "' target='_blank'>" + label + "</a>";
+          var buttonLink = "<button data-url='" + vURL + "' data-label='" + label + "' class='addButton btn btn-primary'>Add</button>"
+          
+          $("#searchResultList").append("<div>" + buttonLink + "  " + resultLink + "</div><br>");
+        };
      });
+    });
 	});
 
   var selectedLinks = [];
