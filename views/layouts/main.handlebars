@@ -18,14 +18,16 @@
         </div>
 
         <div class="sidenav">
-            <div id='div_0' class='catButton'></div>
-            <button type="button">Enter Link</button>
-            <button type="button">Manage Categories</button>
-            <button type="button">Search YouTube</button>
+            <button class="dropdown-btn">Dropdown
+                <i class="fa fa-caret-down"></i>
+              </button>
+            <button id="link" type="button">Enter Link</button>
+            <button id="manage" type="button">Manage Categories</button>
+            <button id="search" type="button">Search YouTube</button>
          </div>
 
 		{{{ body }}}
-	<script src="/js/categoryDD.js"></script>
-	
+	<script src="public/js/categoryDD.js"></script>
+	<script>getCategories()</script>
 	</body>
 </html>
