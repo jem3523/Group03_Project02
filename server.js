@@ -14,6 +14,8 @@ app.set("view engine", "handlebars");
 //UPDATE THE ROUTE LIST!
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
+require("./routes/cat-api-routes.js")(app);
+require("./routes/api-youTube.js")(app);
 
 db.sequelize.sync({ force: true })
 .then(function() 
