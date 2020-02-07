@@ -1,15 +1,26 @@
-<ol >
-  {{#each dataFromDB}}
-      <li>
-        {{this.dataValues.linkURL}}
-        <button data-id="{{this.dataValues.id}}" class="deleteButton">Delete</button>
-      </li>
-  {{/each}}
-</ol>
-  
-<form class="create-form text-center">
-  <div class="form-group">
-    <input type="text" id="newLink" name="dataName">
+<form>
+  <div class="row">
+    <div class="col-md-9">
+        <button type="button" class="btn btn-primary btn-lg btn-block">Link Label 1</button>
+    </div>
+    <div class="col-md-3">
+        <button type="submit" class="btn btn-primary my-1">Edit</button>
+      
   </div>
-  <button id="submitButton" type="submit">Submit</button>
-</form>
+  <div class="row">
+    <div class="col-md-9">
+        <button type="button" class="btn btn-primary btn-lg btn-block">Link Label 2</button>
+    </div>
+    <div class="col-md-3">
+        <button type="submit" class="btn btn-primary my-1">Edit</button>
+      
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+        <button type="button" class="btn btn-primary btn-lg btn-block">Link Label 3</button>
+    </div>
+    <div class="col-md-3">
+        <button type="submit" class="btn btn-primary my-1">Edit</button>
+      
+  </div>
+  </form>
