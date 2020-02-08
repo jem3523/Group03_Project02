@@ -21,11 +21,11 @@ function getCategories(linkID)
         var dropDownList = ""; 
         $.each(data,function(key,val) 
         {
-            dropDownList += "<li><a class = 'dropdown-item_" + linkID + "' id='" + key + "' href='#' data-linkID='" + linkID + "'>" + val.categoryName + "</a></li>"
+            dropDownList += "<li><a class = 'dropdown-item_" + linkID + "' id='" + val.id + "' href='#' data-linkID='" + linkID + "'>" + val.categoryName + "</a></li>"
         });
         
         const dropDownCode = `<div class='dropdown mr-1"'>
-        <button id= 'buttonID_${linkID}' class='btn btn-default dropdown-toggle' type='button' data-toggle='dropdown' data-offset="10,10">Select Category</button>
+        <button id= 'buttonID_${linkID}' class='btn btn-primary  dropdown-toggle' type='button' data-toggle='dropdown' data-offset="10,10">Select Category</button>
         <div class='dropdown-menu'>
         <ul>
         ${dropDownList}
