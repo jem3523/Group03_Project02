@@ -17,8 +17,8 @@ module.exports = function(app) {
   });
 
   //Enter link route:
-  app.get("/link", function(req, res) {
-    return res.render("link");
+  app.get("/edit", function(req, res) {
+    return res.render("edit");
   });
 
   //Manage category route:
