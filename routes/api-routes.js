@@ -7,6 +7,7 @@ module.exports = function(app) {
   //GET: category route, for getting all categories
   app.get("/api/posts", function(req, res) {
     var query = {};
+    console.log(req.query.category_id)
     if (req.query.category_id) {
       query.CategoryId = req.query.category_id;
     }

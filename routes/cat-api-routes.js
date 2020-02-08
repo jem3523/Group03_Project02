@@ -34,7 +34,7 @@ module.exports = function(app) {
     });
   });
 
-  app.delete("/api/authors/:id", function(req, res) {
+  app.delete("/api/category/:id", function(req, res) {
     db.category_tb.destroy({
       where: {
         id: req.params.id
