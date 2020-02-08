@@ -22,6 +22,7 @@ module.exports = function(app) {
   
   //POST: category route, for saving a new entry
   app.post("/api/posts", function(req, res) {
+    console.log(req.body)
     db.link_tb.create(req.body).then(function(dbPost) {
       res.json(dbPost);
     });
