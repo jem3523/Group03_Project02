@@ -1,24 +1,17 @@
-$(document).ready(function() 
-{
-  $('#edit').on('click', function ()
-  {
+$(document).ready(function() {
+  $('#edit').on('click', function () {
     window.location.href = "/link";
   });
 
-  $('#manage').on('click', function ()
-  {
+  $('#manage').on('click', function () {
     window.location.href = "/manage";
   });
 
-  $('#search').on('click', function ()
-  {
+  $('#search').on('click', function () {
     window.location.href = "/search";
   });
 
-  $('#home').on('click', function ()
-  {
+  $('#home').on('click', function () {
     window.location.href = "/";
   });
 });
-
-
