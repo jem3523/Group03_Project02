@@ -1,0 +1,17 @@
+
+
+<h1>{{name}}</h1>
+{{#each links}}
+<div class="row">
+    <div class="col-md-9">
+        <a href="{{linkURL}}">
+            <button type="button" class="btn btn-primary btn-lg btn-block">{{label}}</button>
+        </a>
+    </div>
+    {{!-- <div class="col-md-3">
+        <button type="submit" class="btn btn-primary my-1">Edit</button>
+      
+  </div> --}}
+
+{{/each}}
+

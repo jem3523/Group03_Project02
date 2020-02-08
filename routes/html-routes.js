@@ -25,7 +25,24 @@ module.exports = function(app) {
   app.get("/manage", function(req, res) {
     return res.render("manage");
   });
-
+  //category (home) route: 
+  app.get("/category/:id", function(req, res) {
+    db.category_tb.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.link_tb],
+    })
+    .then(function(dbcategory_tb) {
+      console.log(dbcategory_tb)
+      res.render("category", {
+        name: dbcategory_tb.categoryName, 
+        //.map is essential to arrays for sequelize
+        links: dbcategory_tb.link_tbs.map(link => link.get({ plain: true }))
+      })
+    });
+    
+});
 }
 
 //SAMPLE RETURN
