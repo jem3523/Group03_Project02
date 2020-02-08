@@ -22,26 +22,21 @@ $(document).ready(function()
       });
   };
 
- /*$("#deletebutton").on("click", deleteButton);
+ $("#deletebutton").on("click", deleteButton);
   
   function deleteButton(event) {
 
     event.preventDefault();
-    console.log("button works!");
+
+    var thisCatID = $("#div_999").attr('data-catID');
+    console.log("deleting: " + thisCatID)
 
     $.ajax({
-        url: "/api/category/",
+        url: "/api/category/" + thisCatID,
         type: "DELETE",
         success: function(result) {
-            // Do something with the result
+          location.reload();
         }
     });
-    //var category= $("#category").val().trim();
-    //console.log(category);
-    //var newPost = {categoryName: category}; 
-    //$.post("/api/posts", newPost, function() 
-    //{
-      //window.location.href = "/";
-    //});
-  };*/
+  };
 });
