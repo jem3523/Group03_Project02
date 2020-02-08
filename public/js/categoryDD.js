@@ -44,14 +44,14 @@ function getCategories(linkID)
             var linkID = $(this).attr("data-linkID")
             var catID = $(this).attr('id');
 
-            console.log("for linkID " + linkID + ", the selected catID is " + catID);
-
-            if (linkID === 999)
+            if (linkID === "999")
             {
+                console.log("for div_" + linkID + ", the selected catID is " + catID);
                 $("#div_" + linkID).attr('data-catID', catID); 
             }
             else
             {
+                console.log("for linkID " + linkID + ", the selected catID is " + catID);
                 $("#linkID_" + linkID).attr('data-catID', catID);  
             };
             

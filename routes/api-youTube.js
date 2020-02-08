@@ -1,6 +1,6 @@
 var db = require("../models");
 var axios = require ("axios");
-var apiKey = require ("../security")
+var apiKey = process.env.APIKEY || require ("../security");
 
 
 module.exports = function(app)
