@@ -1,6 +1,6 @@
 $(document).ready(function() 
 {
-  $('#link').on('click', function ()
+  $('#edit').on('click', function ()
   {
     window.location.href = "/link";
   });

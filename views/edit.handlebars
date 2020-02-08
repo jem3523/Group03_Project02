@@ -1,22 +1,21 @@
 <form style="margin-left: 200px; margin-top:50px">
-  <div class="row">
-    <div class="col-md-9">
-        <input type="text" id="category" class="form-control" placeholder="New Catagory">
-    </div>
-    <div class="col-md-3">
-        <button type="submit" class="btn btn-primary my-1" id="savebutton">Save</button>
-      
+  <div class="form-group">
+    <label for="urlInputArea">URL</label>
+    <input type="textarea" class="form-control" id="input1" placeholder="Enter URL">
   </div>
-  <div class="row">
-    <div class="col-md-9">
+  <div class="form-group">
+    <label for="labelInputArea">Label</label>
+    <input type="textarea" class="form-control" id="input2" placeholder="Enter Label">
+  </div>
+  <div class="form-group">
+    <label for="catagoriesArea">Catagories</label>
     <select class="form-control">
-      <option id="1">Catagory 1</option>
-      <option id="2">Delete Catagory 2</option>
-        <option id="3">Delete Catagory 3</option>
-    </select>
-    </div>
-    <div class="col-md-3">
-        <button type="submit" class="btn btn-primary my-1" id="deletebutton">Delete</button>
-    </div>
+  <option>Add Catagory</option>
+</select>
   </div>
+  <button type="submit" class="btn btn-primary my-1"id="manageButton">Save</button>
+  <!--
+  <button type="submit" class="btn btn-primary my-1">Update</button>
+  <button type="submit" class="btn btn-primary my-1">Delete</button>
+  -->
 </form>
