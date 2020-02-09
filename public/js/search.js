@@ -24,15 +24,6 @@ $(document).ready(function()
 	});
 
   var selectedLinks = [];
-  var catIDTempHolder = null;
-
-  function updateArray (linkID, catID)
-  {
-    selectedLinks[linkID].catID =catID;
-  };
-
-
-
 
   $(document).on("click", ".addButton", function()
   {
@@ -45,9 +36,15 @@ $(document).ready(function()
     for (var j=0; j < selectedLinks.length; j++)
     {
       var resultLink = "<a id='linkID_" + j + "' data-catID = '' href='" + selectedLinks[j].url + "' target='_blank'>" + selectedLinks[j].label + "</a>";
-      $("#selectionList").append("<div id='div_" + j + "' class='catButton'>" + resultLink + "</div><br>");
+      resultLink += "<div>";
+      resultLink += "<select id='linkID_" + j + "' class='form-control populateCategoryDropdown'>";
+      resultLink += "<option class='listHolder'>Select Category</option></select>";
+      resultLink += "</div>";
 
-      getCategories(j);
+      $("#selectionList").append("<div>" + resultLink + "</div><br>");
+      
+      //$("#selectionList").append("<div id='div_" + j + "' class='catButton'>" + resultLink + "</div><br>");
+      //getCategories(j);
       
     };
    

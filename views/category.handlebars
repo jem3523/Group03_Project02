@@ -1,17 +1,18 @@
+<div style="margin-left: 200px; margin-top:50px">
+    <h4>{{name}}</h4>
+    <p>Click on the button to open the link.</p>
+    {{#each links}}
+    <div class="row">
+        <div class="col-md-9">
+            <a href="{{linkURL}}">
+                <button type="button" class="btn btn-primary btn-lg btn-block">{{label}}</button>
+            </a>
+        </div>
+        {{!-- <div class="col-md-3">
+            <button type="submit" class="btn btn-primary my-1">Edit</button>
+        
+    </div> --}}
 
-
-<h1>{{name}}</h1>
-{{#each links}}
-<div class="row">
-    <div class="col-md-9">
-        <a href="{{linkURL}}">
-            <button type="button" class="btn btn-primary btn-lg btn-block">{{label}}</button>
-        </a>
-    </div>
-    {{!-- <div class="col-md-3">
-        <button type="submit" class="btn btn-primary my-1">Edit</button>
-      
-  </div> --}}
-
-{{/each}}
+    {{/each}}
+</div>
 

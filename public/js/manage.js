@@ -1,34 +1,29 @@
 $(document).ready(function() 
-
 {
-  function getCategory() {
-      $.get("/api/category", function(data) {
-
-      })
-  }
   //listener for new entry submit button (based on button ID)
- $("#savebutton").on("click", saveButton);
+ $("#saveCatButton").on("click", saveButton);
 
   function saveButton(event) {
 
       event.preventDefault();
-      console.log("button works!");
-      var category= $("#category").val().trim();
-      console.log(category);
-      var newPost = {categoryName: category}; //data packet
-      $.post("/api/posts", newPost, function() //sending to the REST API endpoint at this address
+
+      var category= $("#newCategory").val().trim();
+      console.log("adding: " + category);
+
+      var newCat = {categoryName: category}; 
+      $.post("/api/category", newCat, function()
       {
-        window.location.href = "/";
+        location.reload();
       });
   };
 
- $("#deletebutton").on("click", deleteButton);
+ $("#deleteCatButton").on("click", deleteButton);
   
   function deleteButton(event) {
 
     event.preventDefault();
 
-    var thisCatID = $("#div_999").attr('data-catID');
+    var thisCatID= $("#deleteCategory option:selected").attr("value");
     console.log("deleting: " + thisCatID)
 
     $.ajax({

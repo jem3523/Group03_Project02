@@ -1,11 +1,9 @@
-//Routes for displaying and saving data to the DB
-
 var db = require("../models");
 
 module.exports = function(app) {
   
-  //GET: category route, for getting all categories
-  app.get("/api/posts", function(req, res) {
+  //GET: get all links associated with a category
+  app.get("/api/link", function(req, res) {
     var query = {};
     console.log(req.query.category_id)
     if (req.query.category_id) {
@@ -20,16 +18,16 @@ module.exports = function(app) {
     });
   });
   
-  //POST: category route, for saving a new entry
-  app.post("/api/posts", function(req, res) {
+  //POST: save a new link
+  app.post("/api/link", function(req, res) {
     console.log(req.body)
     db.link_tb.create(req.body).then(function(dbPost) {
       res.json(dbPost);
     });
   });
 
-  //DELETE: link, an entry from the table
-  app.delete("/api/posts/:id", function(req, res) {
+  //DELETE: delete a link (stretch goal)
+  app.delete("/api/link/:id", function(req, res) {
     db.link_tb.destroy({
       where: {
         id: req.params.id
@@ -39,9 +37,8 @@ module.exports = function(app) {
     });
   });
 
-  //PUT: route for updating posts
-  //! Available for later if we need it.
-  app.put("api/posts", function (req, res) {
+  //PUT: route for updating link info (stretch goal)
+  app.put("api/link", function (req, res) {
     db.link_tb.update(
       req.body,
       {
