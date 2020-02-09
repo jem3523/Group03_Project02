@@ -1,19 +1,15 @@
 <form style="margin-left: 200px; margin-top:50px">
-  <div class="row">
-    <div class="col-md-9">
-        <input type="text" id="category" class="form-control" placeholder="New Catagory">
-    </div>
-    <div class="col-md-3">
-        <button type="submit" class="btn btn-primary my-1" id="savebutton">Save</button>
-      
+  <div class="form-group">
+    <label>Add New Category</label>
+    <input type="text" id="newCategory" class="form-control" placeholder="New Catagory">
   </div>
-  <div class="row">
-    <div class="col-md-9">
-      
-    <div class="col-md-3">
-        <div id='div_999' data-catID = '' class='catButton'></div>
-        <button type="submit" class="btn btn-primary my-1" id="deletebutton">Delete</button>
-    </div>
+  <button type="submit" class="btn btn-primary my-1" id="saveCatButton">Save</button>  
+  <br><br>
+  <div class="form-group">
+    <label>Delete Category and Associated Links</label>
+    <select id="deleteCategory" class="form-control populateCategoryDropdown">
+      <option class="listHolder">Select Category</option>
+    </select>
   </div>
+  <button type="submit" class="btn btn-primary my-1" id="deleteCatButton">Delete</button>
 </form>
-<script>getCategories(999)</script>

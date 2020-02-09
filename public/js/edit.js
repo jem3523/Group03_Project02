@@ -1,24 +1,23 @@
 $(document).ready(function() 
 {
-  //listener for new entry submit button (based on button ID)
- $("#manageButton").on("click", manageButton);
+ $("#saveLinkButton").on("click", saveLinkButton);
 
-  function manageButton(event) {
+  function saveLinkButton(event) {
 
       event.preventDefault();
-      console.log("button works!");
+
       var enterURL= $("#input1").val().trim();
       var enterLabel= $("#input2").val().trim();
+      var enterCatId= $("#input3 option:selected").attr("value");
+
       console.log(enterLabel);
       console.log(enterURL);
-      var newPost = {linkURL: enterURL, label: enterLabel}; 
-      $.post("/api/posts", newPost, function() 
+      console.log(enterCatId);
+
+      var newLink = {linkURL: enterURL, label: enterLabel, categoryTbId: enterCatId}; 
+      $.post("/api/link", newLink, function() 
       {
-        window.location.href = "/";
+        location.reload();
       });
-
-      
     };
-
-
 });
