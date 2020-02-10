@@ -22,6 +22,7 @@ $(document).ready(function()
     };
   };
 
+
  $("#deleteCatButton").on("click", deleteButton);
   
   function deleteButton(event) {
@@ -42,6 +43,39 @@ $(document).ready(function()
             location.reload();
           }
       });
+    };
+  };
+
+
+  $("#editCatButton").on("click", editButton);
+  
+  function editButton(event) {
+
+    event.preventDefault();
+
+    var thisCatID= $("#editCategory option:selected").attr("value");
+
+    if (!thisCatID)
+    {console.log ("No category to edit has been entered.")}
+    else
+    {
+      console.log("editing: " + thisCatID)
+      var updatedCatName = 
+      {
+        categoryName: $("#editCategoryText").val().trim(),
+        id: thisCatID
+      };
+
+      console.log(updatedCatName);
+
+      $.ajax({
+        url: "/api/category",
+        method: "PUT",
+        data: updatedCatName
+      })
+        .then(function() {
+          location.reload();
+        });
     };
   };
 });

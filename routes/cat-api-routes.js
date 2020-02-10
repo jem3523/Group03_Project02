@@ -41,4 +41,16 @@ module.exports = function(app) {
     });
   });
 
+  //PUT: edit a category name
+  app.put("api/category", function (req, res) {
+    db.category_tb.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbcategory_tb) {
+      res.json(dbcategory_tb);
+    });
+  });
 };
