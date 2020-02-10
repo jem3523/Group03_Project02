@@ -14,10 +14,15 @@ $(document).ready(function()
       console.log(enterURL);
       console.log(enterCatId);
 
-      var newLink = {linkURL: enterURL, label: enterLabel, categoryTbId: enterCatId}; 
-      $.post("/api/link", newLink, function() 
+      if (!enterLabel || !enterURL || !enterCatId )
+      {console.log ("All input fields must be entered.")}
+      else
       {
-        location.reload();
-      });
+        var newLink = {linkURL: enterURL, label: enterLabel, categoryTbId: enterCatId}; 
+        $.post("/api/link", newLink, function() 
+        {
+          location.reload();
+        });
+      };
     };
 });

@@ -38,6 +38,7 @@ module.exports = function(app) {
     })
     .then(function(dbcategory_tb) {
       //console.log(dbcategory_tb)
+      console.log ("links found")
       res.render("category", {
         name: dbcategory_tb.categoryName, 
         //.map is essential to arrays for sequelize

@@ -5,16 +5,21 @@ $(document).ready(function()
 
   function saveButton(event) {
 
-      event.preventDefault();
+    event.preventDefault();
 
-      var category= $("#newCategory").val().trim();
-      console.log("adding: " + category);
+    var category= $("#newCategory").val().trim();
+    console.log("adding: " + category);
 
+    if (!category)
+    {console.log ("No new category entered.")}
+    else
+    {
       var newCat = {categoryName: category}; 
       $.post("/api/category", newCat, function()
       {
         location.reload();
       });
+    };
   };
 
  $("#deleteCatButton").on("click", deleteButton);
@@ -26,12 +31,17 @@ $(document).ready(function()
     var thisCatID= $("#deleteCategory option:selected").attr("value");
     console.log("deleting: " + thisCatID)
 
-    $.ajax({
-        url: "/api/category/" + thisCatID,
-        type: "DELETE",
-        success: function(result) {
-          location.reload();
-        }
-    });
+    if (!thisCatID)
+    {console.log ("No category to delete has been entered.")}
+    else
+    {
+      $.ajax({
+          url: "/api/category/" + thisCatID,
+          type: "DELETE",
+          success: function(result) {
+            location.reload();
+          }
+      });
+    };
   };
 });
