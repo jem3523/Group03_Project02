@@ -54,7 +54,7 @@ $(document).ready(function()
     {
       for (var j=0; j < selectedLinks.length; j++)
       {
-        var resultLink = "<a id='linkID_" + j + "' data-catID = '1' href='" + selectedLinks[j].url + "' target='_blank'>" + selectedLinks[j].label + "</a>";
+        var resultLink = "<a id='linkID_" + j + "' data-catID = '' href='" + selectedLinks[j].url + "' target='_blank'>" + selectedLinks[j].label + "</a>";
         resultLink += "<div>";
         resultLink += "<select id ='selectID_" + j + "' data-holdID ='" + j + "' class='form-control'>";
         resultLink += options;
@@ -65,11 +65,9 @@ $(document).ready(function()
         $("#selectID_" + j).on('click', function ()
         {
           //THIS LINE IS BROKEN!!
-            var catID = $("#selectID_" + j + " option:selected").attr("value");
-          //var catID = $("#input3             option:selected").attr("value");
-          
+          //THE LISTENER IS EXPECTING "j" to be passed in.  I need hard-coded during listener creation.
+          var catID = $("#selectID_" + j + " option:selected").attr("value");
           console.log ("listener engaged: " + catID);
-
           $("#linkID_" + j).attr('data-catID', catID);  
           //selectedLinks[j].catID = $(selectID).attr("value");
         });

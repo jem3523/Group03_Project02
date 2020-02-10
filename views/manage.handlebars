@@ -6,9 +6,19 @@
   <button type="submit" class="btn btn-primary my-1" id="saveCatButton">Save</button>  
   <br><br>
   <div class="form-group">
+    <label>Edit Category Name</label>
+    <select id="editCategory" class="form-control">
+      <option class="listHolder">Edit Categories</option>
+    </select>
+     <br>
+    <input type="text" id="editCategoryText" class="form-control" placeholder="Edit Catagory Name">
+  </div>
+  <button type="submit" class="btn btn-primary my-1" id="editCatButton">Edit</button>
+    <br><br>
+  <div class="form-group">
     <label>Delete Category and Associated Links</label>
-    <select id="deleteCategory" class="form-control populateCategoryDropdown">
-      <option class="listHolder">Select Category</option>
+    <select id="deleteCategory" class="form-control">
+      <option class="listHolder">Delete Categories</option>
     </select>
   </div>
   <button type="submit" class="btn btn-primary my-1" id="deleteCatButton">Delete</button>
