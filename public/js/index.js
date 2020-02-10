@@ -4,15 +4,15 @@ $(document).ready(function()
 
   function selectButton(event) {
 
-      event.preventDefault();
+    event.preventDefault();
 
-      var enterCatId= $("#selectCategory option:selected").attr("value");
+    var enterCatId= $("#selectCategory option:selected").attr("value");
 
-      var catPath = "/category/" + enterCatId;
+    var catPath = "/category/" + enterCatId;
 
-      console.log(catPath);
+    console.log(catPath);
 
-      $.get(catPath);
-
-    };
+    location.href = catPath;
+    
+  };
 });
