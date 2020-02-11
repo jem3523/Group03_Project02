@@ -42,7 +42,7 @@ module.exports = function(app) {
   });
 
   //PUT: edit a category name
-  app.put("api/category", function (req, res) {
+  app.put("/api/category", function (req, res) {
     db.category_tb.update(
       req.body,
       {
