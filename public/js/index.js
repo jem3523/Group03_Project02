@@ -14,5 +14,5 @@ $(document).ready(function()
 
     location.href = catPath;
     
-  };
+  }
 });

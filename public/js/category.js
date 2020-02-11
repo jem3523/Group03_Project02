@@ -16,9 +16,9 @@ $(document).ready(function()
     $.ajax({
         url: "/api/link/" + thisLinkID,
         type: "DELETE",
-        success: function(result) {
+        success: function() {
           location.reload();
         }
     });
-  };
+  }
 });
