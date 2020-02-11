@@ -19,8 +19,8 @@ $(document).ready(function()
       {
         location.reload();
       });
-    };
-  };
+    }
+  }
 
 
  $("#deleteCatButton").on("click", deleteButton);
@@ -39,12 +39,12 @@ $(document).ready(function()
       $.ajax({
           url: "/api/category/" + thisCatID,
           type: "DELETE",
-          success: function(result) {
+          success: function() {
             location.reload();
           }
       });
-    };
-  };
+    }
+  }
 
 
   $("#editCatButton").on("click", editButton);
@@ -76,6 +76,6 @@ $(document).ready(function()
         .then(function() {
           location.reload();
         });
-    };
-  };
+    }
+  }
 });

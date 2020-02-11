@@ -17,5 +17,5 @@ $(document).ready(function()
             console.log(options)
             $(".listHolder").replaceWith(options);    
         });
-    };
+    }
 });

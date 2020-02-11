@@ -14,7 +14,7 @@ $(document).ready(function()
     {
       console.log("No data in input.");
       return
-    };
+    }
 
     //create an object of the column name key:value pair
     var newPost = {linkURL: entryInput};
@@ -23,7 +23,7 @@ $(document).ready(function()
     {
       window.location.href = "/";
     });
-  };
+  }
 
   //listener for delete entry buttons (based on button class)
   $(".deleteButton").on("click", deleteName);
@@ -45,8 +45,8 @@ $(document).ready(function()
     .then
     {
       window.location.href = "/";
-    };
-  };
+    }
+  }
   
 });
 

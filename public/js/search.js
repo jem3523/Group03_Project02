@@ -32,9 +32,9 @@ $(document).ready(function()
             var buttonLink = "<button id='" + i + "' data-url='" + vURL + "' data-label='" + label + "' class='link_" + i + " addButton btn btn-primary'>Add</button>"
             
             $("#searchResultList").append("<div>" + buttonLink + "  " + resultLink + "</div><br>");
-          };
+          }
       });
-    };
+    }
 	});
 
   var selectedLinks = [];
@@ -107,7 +107,7 @@ $(document).ready(function()
           {
             console.log(newLink);
           }); 
-        };
+        }
           selectedLinks = [];
           window.location.href = "/";
       });

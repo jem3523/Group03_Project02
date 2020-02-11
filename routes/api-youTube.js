@@ -1,4 +1,3 @@
-var db = require("../models");
 var axios = require ("axios");
 var apiKey = process.env.APIKEY || require ("../security");
 
