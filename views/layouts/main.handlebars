@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://code.jquery.com/jquery-latest.js"></script>
 	<link rel="stylesheet" href="/css/style.css" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap" rel="stylesheet">
 
 	<script src="/js/categoryDD.js"></script>
 	<script src="/js/edit.js"></script>
@@ -16,18 +17,24 @@
 	<title>Link Library</title>
 </head>
 	<body>
-		<div class="topnav">
-            <h1>Link Library</h1>
-            
-        </div>
-
-        <div class="sidenav">
-			<button id="home" type="button">Home</button>
-			<button id="search" type="button">Search YouTube</button>
-            <button id="edit" type="button">Enter Link</button>
-            <button id="manage" type="button">Manage Categories</button>
-         </div>
-
-		{{{ body }}}
+    	<header> 
+        	<h1>Link Library</h1>
+    	</header>
+		<main>
+			<aside class="opened">
+            	<button id="toggle" class="toggle-button opened">
+                    <i class="fas fa-arrow-circle-left fa-2x"></i>
+            	</button>
+           		<button id="home" type="button">Home</button>
+            	<button id="edit" type="button">Enter Link</button>
+            	<button id="manage" type="button">Manage Categories</button>
+            	<button id="search" type="button">Search YouTube</button>
+			</aside>
+            <section class="opened">
+            	{{{ body }}}
+			</section>
+		</main>
+		<script src="https://kit.fontawesome.com/62a7c74d0d.js" crossorigin="anonymous"></script>
+		<script src="/js/main.js"></script>
 	</body>
 </html>
