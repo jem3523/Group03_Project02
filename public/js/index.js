@@ -8,11 +8,17 @@ $(document).ready(function()
 
     var enterCatId= $("#selectCategory option:selected").attr("value");
 
-    var catPath = "/category/" + enterCatId;
+    if(enterCatId == "Select Category")
+    {
+      var catPath = "/category/" + enterCatId;
 
-    console.log(catPath);
+      console.log(catPath);
 
-    location.href = catPath;
-    
+      location.href = catPath;
+    }
+    else
+    {
+      console.log ("No category selected")
+    }
   }
 });
