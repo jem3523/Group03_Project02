@@ -1,6 +1,6 @@
 $(document).ready(function()
 
-//function buildDeleteLinkListener() 
+//this function deletes the selected link assigned to a specific category
 {
   $(".deleteLink").on("click", deleteLink);
   

@@ -10,12 +10,13 @@ module.exports = function(app) {
   });
 
 
+  //youTube search route: 
   app.get("/search", function(req, res) {
     return res.render("search");
   });
   
 
-  //Enter link route:
+  //Enter link (manually) route:
   app.get("/edit", function(req, res) {
     return res.render("edit");
   });
@@ -27,7 +28,7 @@ module.exports = function(app) {
   });
   
 
-  //category route: 
+  //category route (displays the links associated with a chosen category): 
   app.get("/category/:id", function(req, res) {
     console.log("finding links for: " + req.params.id)
     db.category_tb.findOne({
