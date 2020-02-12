@@ -1,6 +1,6 @@
 $(document).ready(function() 
 {
-  //listener for new entry submit button (based on button ID)
+  //listener for new category entry submit button
  $("#saveCatButton").on("click", saveButton);
 
   function saveButton(event) {
@@ -10,6 +10,7 @@ $(document).ready(function()
     var category= $("#newCategory").val().trim();
     console.log("adding: " + category);
 
+    //check to make sure the field is populated
     if (!category)
     {console.log ("No new category entered.")}
     else
@@ -22,16 +23,18 @@ $(document).ready(function()
     }
   }
 
-
+ //listener for delete category button
  $("#deleteCatButton").on("click", deleteButton);
   
   function deleteButton(event) {
 
     event.preventDefault();
 
+    //grabs the categoryID from the dynamically-populated drop-down list
     var thisCatID= $("#deleteCategory option:selected").attr("value");
     console.log("deleting: " + thisCatID)
 
+    //check to make sure the field is populated
     if (!thisCatID)
     {console.log ("No category to delete has been entered.")}
     else
@@ -46,15 +49,17 @@ $(document).ready(function()
     }
   }
 
-
+  //listener for edit category button
   $("#editCatButton").on("click", editButton);
   
   function editButton(event) {
 
     event.preventDefault();
 
+    //grabs the categoryID from the dynamically-populated drop-down list
     var thisCatID= $("#editCategory option:selected").attr("value");
 
+    //check to make sure the field is populated
     if (!thisCatID)
     {console.log ("No category to edit has been entered.")}
     else
