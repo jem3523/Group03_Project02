@@ -1,4 +1,5 @@
 var axios = require ("axios");
+//APIKEY is stored as a variable in Heroku; for localhost, a security file is required and is NOT part of the git package
 var apiKey = process.env.APIKEY || require ("../security");
 
 

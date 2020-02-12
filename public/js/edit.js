@@ -1,3 +1,5 @@
+//although named "edit", this function actually saves a new link into the DB, conssting of a URL, a label, and a associated categoryID.
+
 $(document).ready(function() 
 {
  $("#saveLinkButton").on("click", saveLinkButton);
@@ -14,6 +16,7 @@ $(document).ready(function()
       console.log(enterURL);
       console.log(enterCatId);
 
+      //check to make sure all three fields have been entered
       if (!enterLabel || !enterURL || !enterCatId )
       {console.log ("All input fields must be entered.")}
       else
