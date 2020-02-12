@@ -1,15 +1,9 @@
-<ol >
-  {{#each dataFromDB}}
-      <li>
-        {{this.dataValues.linkURL}}
-        <button data-id="{{this.dataValues.id}}" class="deleteButton">Delete</button>
-      </li>
-  {{/each}}
-</ol>
-  
-<form class="create-form text-center">
+<form style="margin-left: 50px; margin-top:20px; margin-right: 50px">
   <div class="form-group">
-    <input type="text" id="newLink" name="dataName">
+    <label>Select Your Category</label>
+    <select id="selectCategory" class="form-control">
+      <option class="listHolder">Categories</option>
+    </select>
   </div>
-  <button id="submitButton" type="submit">Submit</button>
+  <button type="submit" class="btn btn-primary my-1" id="selectCatButton">Go To Your Links!</button>
 </form>

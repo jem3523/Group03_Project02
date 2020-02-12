@@ -1,4 +1,106 @@
-li 
-{
-  text-emphasis: bold;
+aside button {
+  /*padding: 6px 8px 6px 16px;*/
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  background-color: #333550;
+  display: block;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+aside button:hover {
+  color: yellow
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  /* border: solid 1px black; */
+}
+* {
+  box-sizing: border-box;
+} 
+
+/* header, aside, section {
+  border: solid 1px #000;
+} */
+
+header {
+  height: 25vh;
+  /* height: 200px; */
+  background-image: url("dim_library.jpg"); 
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: bolder;
+  text-align: center;
+  /* background-color: hotpink; */
+}
+
+h1, strong {
+  font-size: 145px;
+  color: white;
+  margin: 0px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+aside, .toggle-button {
+  background: #333550;
+}
+aside, section, .toggle-button  {
+  transition: width 0.5s, left 0.5s;
+}
+aside.opened {
+  height: 100vh;
+  width: 20vw;
+}
+section {
+  /*background: #F0F0F0;*/
+  padding-left: 50px;
+}
+section.opened {
+  height: 75vh;
+  width: 80vw;
+}
+
+aside.closed {
+  height: 80vh;
+  width: 0vw;
+  overflow: hidden;
+}
+section.closed {
+  height: 80vh;
+  width: 100vw;
+}
+
+.toggle-button {
+  position: absolute;
+  height: 50px;
+  width: 40px;
+  text-align: center;
+  top: 25vh;
+  border: 0px;
+  padding: 0px;
+  margin-left: -3px;
+  /* margin-top: 1px; */
+}
+.toggle-button.opened {
+  left: 20vw;
+}
+
+.toggle-button.closed {
+  left: 0vw;
+}
+
+.btn-primary {
+  background-color: #333550;
 }
