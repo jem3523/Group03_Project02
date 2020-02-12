@@ -1,15 +1,10 @@
-<div style="margin-left: 200px; margin-top:50px">
+<div style="margin-left: 50px; margin-top:20px; margin-right: 50px">
     <h4>{{name}}</h4>
     <p>Click on the button to open the link.</p>
     {{#each links}}
-    <div class="row">
-        <div class="col-md-9">
-            <a href="{{linkURL}}" target="_blank">
-                <button type="button" class="btn btn-primary btn-lg btn-block">{{label}}</button>
-            </a>
-        </div>
-        <div class="col-md-3">
-            <button id= "{{id}}" type="submit" class="deleteLink btn btn-primary my-1 ">Delete Link</button>
+    <div>
+        <a href="{{linkURL}}" target="_blank">{{label}}&#8239;&#8239;</a>
+        <button id= "{{id}}" type="submit" class="deleteLink btn btn-primary btn-sm">Delete Link</button>
         </div>
     {{/each}}
 </div>
