@@ -10,15 +10,15 @@ $(document).ready(function()
 
     if(enterCatId == "Select Category")
     {
+      console.log ("No category selected")
+    }
+    else
+    {
       var catPath = "/category/" + enterCatId;
 
       console.log(catPath);
 
       location.href = catPath;
-    }
-    else
-    {
-      console.log ("No category selected")
     }
   }
 });
