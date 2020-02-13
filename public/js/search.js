@@ -18,11 +18,14 @@ $(document).ready(function()
       .then (function(results)
         {
           //add instructions, clear any list that may already be rendered and render the new list
+          $("#selectedTitle").remove();
           $("#searchResultList").prepend("<p>Click to view the video in a new tab. To select, simply click the Add button.</p>");
-          $("#selectionList").empty();
-          $("#selectionList").append("<h3>Selected Links</h3>");
+          //$("#selectionList").empty();
+          $("#selectionList").prepend("<h3 id ='selectedTitle'>Selected Links</h3>");
+          $("#instructions").remove();
+          $("#saveButton").remove();
 
-          var instructions = "<p>Be sure to click the Save button to add your selection list to your chosen categories.</p>"
+          var instructions = "<p id= 'instructions'>Be sure to click the Save button to add your selection list to your chosen categories.</p>"
           instructions += "<button id='saveButton' class='btn btn-primary' type='submit'>Save Selections</button>"
 
           $("#instructionBlock").append(instructions);
