@@ -28,12 +28,14 @@ I need a place to *collect* and *organize* the various web links I use based on 
 ---- 
 
 ## Links
-[Heroku Deployed Application](https://boiling-peak-49936.herokuapp.com/)
-[Github Repository Page](https://github.com/jem3523/Group03_Project02)
+* [Heroku Deployed Application](https://boiling-peak-49936.herokuapp.com/)
+* [Github Repository Page](https://github.com/jem3523/Group03_Project02)
 
 ---- 
 
 ## GIFs
 
+![gif of Front End](./public/frontendlibrary.gif)
+![gif of Back End](./public/backendlibrary.gif)
 
 ----
